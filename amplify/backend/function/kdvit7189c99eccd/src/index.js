@@ -25,14 +25,12 @@ exports.handler = async (event) => {
     const randomMovie = movies[Math.floor(Math.random() * movies.length)];
 
     return {
-        statusCode: 200,
-        
-    
     //  Uncomment below to enable CORS requests
      headers: {
          "Access-Control-Allow-Origin": "*",
          "Access-Control-Allow-Headers": "*"
      },
+     statusCode: 200,
      body: randomMovie
         
     };
