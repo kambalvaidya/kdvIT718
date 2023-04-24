@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import { Amplify } from 'aws-amplify';
+import Amplify, { API } from 'aws-amplify'
 import "@aws-amplify/ui-react/styles.css";
 import config from './aws-exports';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import {
   withAuthenticator,
   Button,
