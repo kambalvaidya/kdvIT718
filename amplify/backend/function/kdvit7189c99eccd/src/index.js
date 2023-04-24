@@ -26,10 +26,10 @@ exports.handler = async (event) => {
 
     return {
     //  Uncomment below to enable CORS requests
-     headers: {
-         "Access-Control-Allow-Origin": "*",
-         "Access-Control-Allow-Headers": "*"
-     },
+    //  headers: {
+    //      "Access-Control-Allow-Origin": "*",
+    //      "Access-Control-Allow-Headers": "*"
+    //  },
      statusCode: 200,
      body: randomMovie
         
