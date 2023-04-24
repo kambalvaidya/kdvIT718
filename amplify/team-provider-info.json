@@ -14,6 +14,15 @@
     "categories": {
       "auth": {
         "kdvit7189309347d": {}
+      },
+      "function": {
+        "kdvit7189c99eccd": {
+          "deploymentBucketName": "amplify-amplify5e7c4df534bc4-staging-165110-deployment",
+          "s3Key": "amplify-builds/kdvit7189c99eccd-306e414f725542343275-build.zip"
+        }
+      },
+      "api": {
+        "api12906dcf": {}
       }
     }
   }

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "auth": {
+      "kdvit7189309347d": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

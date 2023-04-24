@@ -3,6 +3,7 @@ import './App.css';
 import { Amplify } from 'aws-amplify';
 import "@aws-amplify/ui-react/styles.css";
 import config from './aws-exports';
+import React, { useState } from 'react';
 import {
   withAuthenticator,
   Button,
@@ -13,17 +14,31 @@ import {
 } from "@aws-amplify/ui-react";
 Amplify.configure(config);
 
+const myAPI = "api12906dcf"
+const path = '/movie'; 
+
+
+
 function App({ signOut }) {
+  const [movie, setMovie] = useState('');
+
+  function getMovie(){
+    API.get(myAPI,path+"/")
+    .then(response => {
+      setMovie(response.title); // update state with the movie title
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
   return (
     <View className="App">
-      <Card>
-        <Image src={logo} className="App-logo" alt="logo" />
-        <Heading level={1}>We now have Auth!</Heading>
-      </Card>
+      <Button onClick={getMovie}>Pick a movie!</Button>
+      {movie && <p>{movie}</p>} {/* render the movie title if it exists */}
       <Button onClick={signOut}>Sign Out</Button>
     </View>
   );
 }
 
 export default withAuthenticator(App);
-

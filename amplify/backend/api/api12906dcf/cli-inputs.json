@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/movie": {
+      "name": "/movie",
+      "lambdaFunction": "kdvit7189c99eccd",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
