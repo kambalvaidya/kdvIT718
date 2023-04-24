@@ -9,13 +9,30 @@ Amplify Params - DO NOT EDIT */
  */
 exports.handler = async (event) => {
     console.log(`EVENT: ${JSON.stringify(event)}`);
+    const movies = [
+        "The Godfather",
+        "The Shawshank Redemption",
+        "The Dark Knight",
+        "Forrest Gump",
+        "The Matrix",
+        "Pulp Fiction",
+        "The Silence of the Lambs",
+        "Star Wars: Episode IV - A New Hope",
+        "The Lord of the Rings: The Fellowship of the Ring",
+        "Fight Club"
+    ];
+
+    const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+
     return {
         statusCode: 200,
+        body: randomMovie,
+    
     //  Uncomment below to enable CORS requests
      headers: {
          "Access-Control-Allow-Origin": "*",
          "Access-Control-Allow-Headers": "*"
-     }, 
-        body: JSON.stringify('Hello from Lambda!'),
+     }
+        
     };
 };
