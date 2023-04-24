@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Amplify, { API } from 'aws-amplify'
+import { API,Amplify } from 'aws-amplify'
 import "@aws-amplify/ui-react/styles.css";
 import config from './aws-exports';
 import React, { useEffect, useState } from 'react'
