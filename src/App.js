@@ -25,6 +25,7 @@ function App({ signOut }) {
   function getMovie(){
     API.get(myAPI,path+"/")
     .then(response => {
+      console.log("here")
       setMovie(response.body); // update state with the movie title
     })
     .catch(error => {
