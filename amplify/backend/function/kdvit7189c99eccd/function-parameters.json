@@ -7,6 +7,14 @@
         "update",
         "delete"
       ]
+    },
+    "storage": {
+      "dynamoa49e1721": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
     }
   },
   "lambdaLayers": []

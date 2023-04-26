@@ -1,0 +1,10 @@
+{
+  "resourceName": "dynamoa49e1721",
+  "tableName": "movietitle",
+  "partitionKey": {
+    "fieldName": "movie",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

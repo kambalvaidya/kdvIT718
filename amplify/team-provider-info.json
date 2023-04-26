@@ -18,11 +18,14 @@
       "function": {
         "kdvit7189c99eccd": {
           "deploymentBucketName": "amplify-amplify5e7c4df534bc4-staging-165110-deployment",
-          "s3Key": "amplify-builds/kdvit7189c99eccd-58593069626845774e68-build.zip"
+          "s3Key": "amplify-builds/kdvit7189c99eccd-3430336d554e51455530-build.zip"
         }
       },
       "api": {
         "api12906dcf": {}
+      },
+      "storage": {
+        "dynamoa49e1721": {}
       }
     }
   }

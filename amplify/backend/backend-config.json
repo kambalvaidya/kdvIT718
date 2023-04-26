@@ -51,6 +51,15 @@
           ],
           "category": "auth",
           "resourceName": "kdvit7189309347d"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "dynamoa49e1721"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -73,6 +82,12 @@
           "resourceName": "kdvit7189c99eccd"
         }
       ]
+    }
+  },
+  "storage": {
+    "dynamoa49e1721": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
     }
   }
 }

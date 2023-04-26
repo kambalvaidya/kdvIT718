@@ -19,6 +19,26 @@
     "authkdvit7189309347dUserPoolId": {
       "Type": "String",
       "Default": "authkdvit7189309347dUserPoolId"
+    },
+    "apiapi12906dcfApiName": {
+      "Type": "String",
+      "Default": "apiapi12906dcfApiName"
+    },
+    "apiapi12906dcfApiId": {
+      "Type": "String",
+      "Default": "apiapi12906dcfApiId"
+    },
+    "storagedynamoa49e1721Name": {
+      "Type": "String",
+      "Default": "storagedynamoa49e1721Name"
+    },
+    "storagedynamoa49e1721Arn": {
+      "Type": "String",
+      "Default": "storagedynamoa49e1721Arn"
+    },
+    "storagedynamoa49e1721StreamArn": {
+      "Type": "String",
+      "Default": "storagedynamoa49e1721StreamArn"
     }
   },
   "Conditions": {
@@ -76,6 +96,21 @@
             },
             "AUTH_KDVIT7189309347D_USERPOOLID": {
               "Ref": "authkdvit7189309347dUserPoolId"
+            },
+            "API_API12906DCF_APINAME": {
+              "Ref": "apiapi12906dcfApiName"
+            },
+            "API_API12906DCF_APIID": {
+              "Ref": "apiapi12906dcfApiId"
+            },
+            "STORAGE_DYNAMOA49E1721_NAME": {
+              "Ref": "storagedynamoa49e1721Name"
+            },
+            "STORAGE_DYNAMOA49E1721_ARN": {
+              "Ref": "storagedynamoa49e1721Arn"
+            },
+            "STORAGE_DYNAMOA49E1721_STREAMARN": {
+              "Ref": "storagedynamoa49e1721StreamArn"
             }
           }
         },
@@ -289,6 +324,39 @@
                       {
                         "Ref": "authkdvit7189309347dUserPoolId"
                       }
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:Put*",
+                "dynamodb:Create*",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:Get*",
+                "dynamodb:BatchGetItem",
+                "dynamodb:List*",
+                "dynamodb:Describe*",
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:Update*",
+                "dynamodb:RestoreTable*",
+                "dynamodb:Delete*"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storagedynamoa49e1721Arn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storagedynamoa49e1721Arn"
+                      },
+                      "index/*"
                     ]
                   ]
                 }
