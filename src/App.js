@@ -40,7 +40,7 @@ function App({ signOut }) {
     }
 
     const data = await API.get('api12906dcf', '/movie', requestData)
-    setMovie(response.body); // update state with the movie title
+    setMovie(data.body); // update state with the movie title
     console.log("data: ", data)
   
   }
