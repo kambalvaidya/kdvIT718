@@ -14,7 +14,7 @@ Amplify Params - DO NOT EDIT */
 const AWS = require('aws-sdk');
 const docClient = new AWS.DynamoDB.DocumentClient()
 const params ={
-    TableName : 'your-table-name',
+    TableName : 'movietitle-staging',
   /* Item properties will depend on your application concerns */
   Item: {
      movie: '12345'
@@ -37,18 +37,39 @@ exports.handler = async (event) => {
     ];
 
     const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+    const params ={
+        TableName : 'movietitle-staging',
+      /* Item properties will depend on your application concerns */
+      Item: {
+         movie: randomMovie
+      }
+    
+    }
+    try {
     await docClient.put(params).promise();
+    return { 
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*"
+        },
+        statusCode: 200,
+        body: randomMovie
+     }
+  } catch (err) {
+    
+    return { error: err }
+  }
     
 
-    return {
+    // return {
         
-    //  Uncomment below to enable CORS requests
-     headers: {
-         "Access-Control-Allow-Origin": "*",
-         "Access-Control-Allow-Headers": "*"
-     },
-     statusCode: 200,
-     body: randomMovie
+    // // //  Uncomment below to enable CORS requests
+    //  headers: {
+    //      "Access-Control-Allow-Origin": "*",
+    //      "Access-Control-Allow-Headers": "*"
+    //  },
+    //  statusCode: 200,
+    //  body: randomMovie
         
-    };
+    // // };
 };
