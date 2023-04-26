@@ -32,7 +32,7 @@ function App({ signOut }) {
 
   function getMovie(){
     console.log("here1")
-    API.get(myAPI,path+"/",myInit)
+    API.options(myAPI,path+"/",myInit)
     .then(response => {
       console.log("here")
       setMovie(response.body); // update state with the movie title
