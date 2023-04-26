@@ -15,7 +15,15 @@ import {
 Amplify.configure(config);
 
 const myAPI = "api12906dcf"
-const path = '/movie'; 
+const path = '/movie';
+const myInit = {
+  headers:{
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "*"
+  }
+
+
+}
 
 
 
@@ -23,7 +31,8 @@ function App({ signOut }) {
   const [movie, setMovie] = useState('');
 
   function getMovie(){
-    API.get(myAPI,path+"/")
+    console.log("here1")
+    API.get(myAPI,path+"/",myInit)
     .then(response => {
       console.log("here")
       setMovie(response.body); // update state with the movie title
