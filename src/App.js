@@ -3,7 +3,7 @@ import './App.css';
 import { API,Amplify,Auth } from 'aws-amplify'
 import "@aws-amplify/ui-react/styles.css";
 import config from './aws-exports';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {
   withAuthenticator,
   Button,
@@ -11,6 +11,7 @@ import {
   Image,
   View,
   Card,
+  Text
 } from "@aws-amplify/ui-react";
 Amplify.configure(config);
 
@@ -45,22 +46,11 @@ function App({ signOut }) {
   
   }
 
-  // function getMovie(){
-  //   console.log("here1")
-  //   API.get(myAPI,path+"/",myInit)
-  //   .then(response => {
-  //     console.log("here")
-  //     setMovie(response.body); // update state with the movie title
-  //   })
-  //   .catch(error => {
-  //     console.log(error);
-  //   })
-  // }
-
+  
   return (
     <View className="App">
       <Button onClick={callApi}>Pick a movie!</Button>
-      {movie && <p>{movie}</p>} {/* render the movie title if it exists */}
+      <Text style={{ fontSize: 20, marginVertical: 10 }}>{`Movie Title: ${movie}`}</Text>
     
       <Button onClick={signOut}>Sign Out</Button>
     </View>
