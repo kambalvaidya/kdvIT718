@@ -17,7 +17,7 @@ const params ={
     TableName : 'your-table-name',
   /* Item properties will depend on your application concerns */
   Item: {
-     id: '12345'
+     movie: '12345'
   }
 
 }
