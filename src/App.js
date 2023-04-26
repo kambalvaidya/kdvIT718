@@ -40,27 +40,28 @@ function App({ signOut }) {
     }
 
     const data = await API.get('api12906dcf', '/movie', requestData)
+    setMovie(response.body); // update state with the movie title
     console.log("data: ", data)
   
   }
 
-  function getMovie(){
-    console.log("here1")
-    API.get(myAPI,path+"/",myInit)
-    .then(response => {
-      console.log("here")
-      setMovie(response.body); // update state with the movie title
-    })
-    .catch(error => {
-      console.log(error);
-    })
-  }
+  // function getMovie(){
+  //   console.log("here1")
+  //   API.get(myAPI,path+"/",myInit)
+  //   .then(response => {
+  //     console.log("here")
+  //     setMovie(response.body); // update state with the movie title
+  //   })
+  //   .catch(error => {
+  //     console.log(error);
+  //   })
+  // }
 
   return (
     <View className="App">
-      <Button onClick={getMovie}>Pick a movie!</Button>
+      <Button onClick={callApi}>Pick a movie!</Button>
       {movie && <p>{movie}</p>} {/* render the movie title if it exists */}
-    <Button onClick={callApi}>Call Api</Button>
+    
       <Button onClick={signOut}>Sign Out</Button>
     </View>
   );
