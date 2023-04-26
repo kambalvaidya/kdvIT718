@@ -39,7 +39,7 @@ function App({ signOut }) {
       }
     }
 
-    const data = await API.get('api12906dc', '/movie', requestData)
+    const data = await API.get('api12906dcf', '/movie', requestData)
     console.log("data: ", data)
   
   }
