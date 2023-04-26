@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { API,Amplify } from 'aws-amplify'
+import { API,Amplify,Auth } from 'aws-amplify'
 import "@aws-amplify/ui-react/styles.css";
 import config from './aws-exports';
 import React, { useEffect, useState } from 'react'
@@ -40,7 +40,7 @@ function App({ signOut }) {
     }
 
     const data = await API.get('api12906dc', '/movie', requestData)
-    onsole.log("data: ", data)
+    console.log("data: ", data)
   
   }
 
