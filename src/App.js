@@ -14,7 +14,7 @@ import {
 } from "@aws-amplify/ui-react";
 Amplify.configure(config);
 
-const myAPI = "api12906dcf"
+const myAPI = "api12906dcf" 
 const path = '/movie';
 const myInit = {
   headers:{
@@ -29,6 +29,20 @@ const myInit = {
 
 function App({ signOut }) {
   const [movie, setMovie] = useState('');
+
+  async function callApi() {
+    const user = await Auth.currentAuthenticatedUser()
+    const token = user.signInUserSession.idToken.jwtToken
+    const requestData = {
+      headers: {
+        Authorization: token
+      }
+    }
+
+    const data = await API.get('api12906dc', '/movie', requestData)
+    onsole.log("data: ", data)
+  
+  }
 
   function getMovie(){
     console.log("here1")
@@ -46,6 +60,7 @@ function App({ signOut }) {
     <View className="App">
       <Button onClick={getMovie}>Pick a movie!</Button>
       {movie && <p>{movie}</p>} {/* render the movie title if it exists */}
+    <Button onClick={callApi}>Call Api</Button>
       <Button onClick={signOut}>Sign Out</Button>
     </View>
   );
